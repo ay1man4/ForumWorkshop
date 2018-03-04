@@ -1,13 +1,12 @@
 # allowed papers: 100, 50, 10, 5, and rest of request
+balance = 500
 
-money = 500
 
-request = 499
-
-def draw(money, request):
-
-    if request > money:
-        print "No enough cash!"
+def withdraw(balance, request):
+    amount = request
+    print "Current balance = " + str(balance)
+    if request > balance:
+        print "Can't give you all this money !!"
     elif request > 0:
         while request > 0:
             if request >= 100:
@@ -25,7 +24,14 @@ def draw(money, request):
             else:
                 print "give " + str(request)
                 request -= request
+        return balance - amount
     else:
-        print "Invalid request!"
+        print "More than zero plz!"
 
-draw(money, request)
+    return balance
+
+
+balance = withdraw(balance, 277)
+balance = withdraw(balance, 30)
+balance = withdraw(balance, 5)
+balance = withdraw(balance, 500)

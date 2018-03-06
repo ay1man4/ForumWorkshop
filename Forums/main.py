@@ -1,4 +1,5 @@
 import models
+import stores
 
 member1 = models.Member("Ayman", 34)
 member2 = models.Member("Azhar", 19)
@@ -13,3 +14,10 @@ print member2
 print post1
 print post2
 print post3
+
+store1 = stores.MemberStore()
+
+store1.add(member1)
+store1.add(member2)
+
+store1.get_all()

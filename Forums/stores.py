@@ -1,13 +1,11 @@
 class MemberStore:
-    global members
     members = []
 
     def get_all(self):
-      for member in members:
-          print member
+      return MemberStore.members
 
     def add(self, member):
-      members.append(member)
+      MemberStore.members.append(member)
 
     def get_by_id(self, id):
         pass
@@ -26,15 +24,13 @@ class MemberStore:
       # checks if an entity exists in a store
 
 class PostStore:
-    global posts
     posts = []
 
     def get_all(self):
-      for post in posts:
-          print post
+      return PostStore.posts
 
     def add(self, post):
-      posts.append(post)
+      PostStore.posts.append(post)
 
     def get_by_id(self, id):
         pass

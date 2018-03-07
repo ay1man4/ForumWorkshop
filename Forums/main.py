@@ -20,4 +20,6 @@ store1 = stores.MemberStore()
 store1.add(member1)
 store1.add(member2)
 
-store1.get_all()
+member_store1 = store1.get_all()
+for m in member_store1:
+    print m

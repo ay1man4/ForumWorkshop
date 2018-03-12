@@ -1,5 +1,7 @@
 class Member:
+    last_id = 0
     def __init__(self, name, age):
+        self.id = 0
         self.name = name
         self.age = age
 

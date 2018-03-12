@@ -6,7 +6,7 @@ class Member:
         self.age = age
 
     def __str__(self):
-        return "%s, %d years" % (self.name, self.age)
+        return "[%d]: %s, %d years" % (self.id, self.name, self.age)
 
 class Post:
     def __init__(self, member, title, content):

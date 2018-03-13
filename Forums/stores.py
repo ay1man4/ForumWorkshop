@@ -16,6 +16,7 @@ class MemberStore:
                 return member
         return None
 
+
     def update(self, member):
         pass
         # update member data
@@ -25,9 +26,9 @@ class MemberStore:
         if member is not None:
             MemberStore.members.remove(member)
 
+
     def entity_exists(self, member):
-        if member is not None:
-            return member in MemberStore.members
+        return self.get_by_id(member.id) is not None
 
 
 class PostStore:
@@ -36,24 +37,27 @@ class PostStore:
     def get_all(self):
         return PostStore.posts
 
+
     def add(self, post):
         PostStore.posts.append(post)
 
-    def get_by_id(self, id):
-        pass
 
-    # search for post by id
+    def get_by_id(self, id):
+        for post in PostStore.posts:
+            if post.id == id:
+                return post
+        return None
+
 
     def update(self, post):
         pass
-
-    # update post data
+        # update post data
 
     def delete(self, id):
-        pass
+        post = self.get_by_id(id)
+        if post is not None:
+            PostStore.posts.remove(post)
 
-    # delete post by id
 
     def entity_exists(self, post):
-        pass
-    # checks if an entity exists in a store
+        if self.get_by_id(post.id) is not None

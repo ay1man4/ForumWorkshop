@@ -10,9 +10,10 @@ class Member:
 
 class Post:
     def __init__(self, member, title, content):
+        self.id = 0
         self. member = member
         self.title = title
         self.content = content
 
     def __str__(self):
-        return "%s: [%s] -> [%s]" % (self.member.name, self.title, self.content)
+        return "[%d]: %s: (%s) -> %s" % (self.id, self.member.name, self.title, self.content)
